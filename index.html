@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--134  142  150-->
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js" integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <center>
+        <header>
+            <h1 class="info"> Choose Your Fighter </h1>
+        </header>
+    </center>
+    <!-- header ends here -->
+    <section>
+        <div id="playerside">
+            <p id="lefthead">Your Fighter</p>
+            <center>
+                <div id="one" class="option">
+                    <img class="good" src="assets/images/charmander.jpg" alt="poke1" data-number="1">
+                    <p class="hp"> HP:<span id="onehp"></span></p>
+                </div>
+                <div id="two" class="option">
+                    <img class="good" src="assets/images/squi.png" alt="poke2" data-number="2">
+                    <p class="hp"> HP:<span id="twohp"></span></p>
+                </div>
+                <div id="three" class="option">
+                    <img class="good" src="assets/images/bulb.png" alt="poke3" data-number="3">
+                    <p class="hp"> HP:<span id="threehp"></span></p>
+                </div>
+            </center>
+        </div>
+        <!-- choices switch here -->
+        <div id="computerside">
+            <p id="righthead">Enemy Fighter</p>
+            <center>
+                <div id="four" class="option2">
+                    <img class="fire bad" src="assets/images/fire.png" alt="poke4" data-number="b3">
+                    <p class="hp fire"> HP:<span id="fourhp"></span></p>
+                </div>
+                <div id="five" class="option2">
+                    <img class="water bad" src="assets/images/tot.jpg" alt="poke5" data-number="b2">
+                    <p class="hp water"> HP:<span id="fivehp"></span></p>
+                </div>
+                <div id="six" class="option2">
+                    <img class="grass bad" src="assets/images/grass.png" alt="poke6" data-number="b1">
+                    <p class="hp grass"> HP:<span id="sixhp"></span></p>
+                </div>
+            </center>
+        </div>
+    </section>
+
+    <div id="userfighter"></div>
+    <center>
+        <div id="fight-button"></div>
+    </center>
+    <div id="badfighter"></div>
+
+    <p id="result">abcdefnikkgkljhaew</p>
+
+<script>
+
+    var userChoice = "";
+    var enemyChoice = "";
+    var start = true;
+
+    var onehp = 130;
+    var twohp = 140;
+    var threehp = 120;
+    var fourhp = 90;
+    var fivehp = 130;
+    var sixhp = 120;
+    $("#onehp").text(onehp);
+    $("#twohp").text(twohp);
+    $("#threehp").text(threehp);
+    $("#fourhp").text(fourhp);
+    $("#fivehp").text(fivehp);
+    $("#sixhp").text(sixhp);
+
+    $(".good").on("click", function () {
+        userChoice = $(this).data("number");
+        
+        if (userChoice == "1" && start == true) {
+            $("#two").css("display", "none");
+            $("#three").css("display", "none");
+            $("#one").css("float", "right");
+            $("#userfighter").append($("#one"));
+            start = false;
+        } else if (userChoice == "2" && start == true) {
+            $("#one").css("display", "none");
+            $("#three").css("display", "none");
+            $("#two").css("float", "right");
+            $("#userfighter").append($("#two"));
+            start = false;
+        } else if (userChoice == "3" && start == true) {
+            $("#one").css("display", "none");
+            $("#two").css("display", "none");
+            $("#three").css("float", "right");
+            $("#userfighter").append($("#three"));
+            start = false;
+        } else {
+            null;
+        }
+    })
+
+    $(".bad").on("click", function () {
+        enemyChoice = $(this).data("number");
+        
+        if (enemyChoice == "b1" && start == false) {
+            $("#lefthead").css("display", "none");
+            aswell();
+            $("#six").css("float", "left");
+            $("#badfighter").append($("#six"));
+            start = true;
+        } else if (enemyChoice == "b2" && start == false) {
+            $("#lefthead").css("display", "none");
+            aswell();
+            $("#five").css("float", "left");
+            $("#badfighter").append($("#five"));
+            start = true;
+        } else if (enemyChoice == "b3" && start == false) {
+            $("#lefthead").css("display", "none");
+            aswell();
+            $("#four").css("float", "left");
+            $("#badfighter").append($("#four"));
+            start = true;
+        } else {
+            $(".info").text("Choose your fighter first!");
+            $(".info").css("color", "red");
+        }
+    })
+
+    function aswell() {
+        var button = $("<button>");
+        button.text("fight");
+        button.attr("id", "for-button");
+        button.attr("onclick", "next()");
+        $("#fight-button").append(button);
+    }
+
+    function next() {
+        alert("akvreve");
+    }
+
+</script>
+
+</body>
+
+</html>
