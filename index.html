@@ -171,6 +171,8 @@
         if (enemyChoice == "b1") {
             if (onehp <= 0) {
                 youlost();
+            } else if (fourhp <= 0) {
+                nextone();
             } else {
                 onehp = onehp - chic;
                 fourhp = fourhp - charm;
@@ -181,6 +183,8 @@
         } else if (enemyChoice == "b2") {
             if (onehp <= 0) {
                 youlost();
+            } else if (fivehp <= 0) {
+                nextone();
             } else {
                 onehp = onehp - croc;
                 fivehp = fivehp - charm;
@@ -191,6 +195,8 @@
         } else if (enemyChoice == "b3") {
             if (onehp <= 0) {
                 youlost();
+            } else if (sixhp <= 0) {
+                nextone();
             } else {
                 onehp = onehp - lava;
                 sixhp = sixhp - charm;
@@ -205,6 +211,8 @@
         if (enemyChoice == "b1") {
             if (twohp <= 0) {
                 youlost();
+            } else if (fourhp <= 0) {
+                nextone();
             } else {
                 twohp = twohp - chic;
                 fourhp = fourhp - squi;
@@ -215,6 +223,8 @@
         } else if (enemyChoice == "b2") {
             if (twohp <= 0) {
                 youlost();
+            } else if (fivehp <= 0) {
+                nextone();
             } else {
                 twohp = twohp - croc;
                 fivehp = fivehp - squi;
@@ -225,6 +235,8 @@
         } else if (enemyChoice == "b3") {
             if (twohp <= 0) {
                 youlost();
+            } else if (sixhp <= 0) {
+                nextone();
             } else {
                 twohp = twohp - lava;
                 sixhp = sixhp - squi;
@@ -239,6 +251,8 @@
         if (enemyChoice == "b1") {
             if (threehp <= 0) {
                 youlost();
+            } else if (fourhp <= 0) {
+                nextone();
             } else {
                 threehp = threehp - chic;
                 fourhp = fourhp - bulb;
@@ -249,6 +263,8 @@
         } else if (enemyChoice == "b2") {
             if (threehp <= 0) {
                 youlost();
+            } else if (fivehp <= 0) {
+                nextone();
             } else {
                 threehp = threehp - croc;
                 fivehp = fivehp - bulb;
@@ -259,6 +275,8 @@
         } else if (enemyChoice == "b3") {
             if (threehp <= 0) {
                 youlost();
+            } else if (sixhp <= 0) {
+                nextone();
             } else {
                 threehp = threehp - lava;
                 sixhp = sixhp - bulb;
@@ -271,6 +289,10 @@
 
     function youlost() {
         $("#result").css("display", "block");
+    }
+
+    function nextone() {
+        alert("choose next enemy");
     }
 
 </script>
