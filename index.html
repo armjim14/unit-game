@@ -63,7 +63,8 @@
     </center>
     <div id="badfighter"></div>
 
-    <p id="result">abcdefnikkgkljhaew</p>
+
+    <a id="result" href="index.html">Restart</a>
 
 <script>
 
@@ -80,10 +81,19 @@
     $("#onehp").text(onehp);
     $("#twohp").text(twohp);
     $("#threehp").text(threehp);
-    $("#fourhp").text(fourhp);
+    $("#fourhp").text(sixhp);
     $("#fivehp").text(fivehp);
-    $("#sixhp").text(sixhp);
+    $("#sixhp").text(fourhp);
 
+    // user attack points
+    var charm = 10;
+    var squi = 12;
+    var bulb = 8;
+
+    // enemy attack points
+    var chic = 6;
+    var croc = 10;
+    var lava = 8;
 
     $(".good").on("click", function () {
         userChoice = $(this).data("number");
@@ -133,8 +143,7 @@
             $("#badfighter").append($("#four"));
             start = true;
         } else {
-            $(".info").text("Choose your fighter first!");
-            $(".info").css("color", "red");
+            null;
         }
     })
 
@@ -147,7 +156,121 @@
     }
 
     function next() {
-        alert("akvreve");
+        if (userChoice == "1") {
+            firstChoice();
+        } else if (userChoice == "2") {
+            secondChoice();
+        } else if (userChoice == "3") {
+            thirdCHoice();
+        } else {
+            null;
+        }
+    }
+
+    function firstChoice() {
+        if (enemyChoice == "b1") {
+            if (onehp <= 0) {
+                youlost();
+            } else {
+                onehp = onehp - chic;
+                fourhp = fourhp - charm;
+                charm += 5;
+                $("#onehp").text(onehp);
+                $("#sixhp").text(fourhp);
+            }
+        } else if (enemyChoice == "b2") {
+            if (onehp <= 0) {
+                youlost();
+            } else {
+                onehp = onehp - croc;
+                fivehp = fivehp - charm;
+                charm += 5;
+                $("#onehp").text(onehp);
+                $("#fivehp").text(fivehp);
+            }
+        } else if (enemyChoice == "b3") {
+            if (onehp <= 0) {
+                youlost();
+            } else {
+                onehp = onehp - lava;
+                sixhp = sixhp - charm;
+                charm += 5;
+                $("#onehp").text(onehp);
+                $("#fourhp").text(sixhp);
+            }
+        }
+    }
+
+    function secondChoice() {
+        if (enemyChoice == "b1") {
+            if (twohp <= 0) {
+                youlost();
+            } else {
+                twohp = twohp - squi;
+                fourhp = fourhp - charm;
+                squi += 5;
+                $("#twohp").text(twohp);
+                $("#sixhp").text(fourhp);
+            }
+        } else if (enemyChoice == "b2") {
+            if (twohp <= 0) {
+                youlost();
+            } else {
+                twohp = twohp - croc;
+                fivehp = fivehp - squi;
+                squi += 5;
+                $("#twohp").text(twohp);
+                $("#fivehp").text(fivehp);
+            }
+        } else if (enemyChoice == "b3") {
+            if (twohp <= 0) {
+                youlost();
+            } else {
+                twohp = twohp - lava;
+                sixhp = sixhp - squi;
+                squi += 5;
+                $("#twohp").text(twohp);
+                $("#fourhp").text(sixhp);
+            }
+        }
+    }
+
+    function thirdCHoice() {
+        if (enemyChoice == "b1") {
+            if (threehp <= 0) {
+                youlost();
+            } else {
+                threehp = threehp - chic;
+                fourhp = fourhp - bulb;
+                bulb += 5;
+                $("#threehp").text(threehp);
+                $("#sixhp").text(fourhp);
+            }
+        } else if (enemyChoice == "b2") {
+            if (threehp <= 0) {
+                youlost();
+            } else {
+                threehp = threehp - croc;
+                fivehp = fivehp - bulb;
+                bulb += 5;
+                $("#threehp").text(threehp);
+                $("#fivehp").text(fivehp);
+            }
+        } else if (enemyChoice == "b3") {
+            if (threehp <= 0) {
+                youlost();
+            } else {
+                threehp = threehp - lava;
+                sixhp = sixhp - bulb;
+                bulb += 5;
+                $("#threehp").text(threehp);
+                $("#fourhp").text(sixhp);
+            }
+        }
+    }
+
+    function youlost() {
+        $("#result").css("display", "block");
     }
 
 </script>

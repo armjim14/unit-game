@@ -109,8 +109,9 @@ img {
 }
 
 #result {
-    width: 100%;
-    text-align: center;
+    display: none;
+    font-size: 30px;
+    margin-left: 48%;
     position: absolute;
-    bottom: 40px;
+    bottom: 100px;
 }
