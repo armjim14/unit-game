@@ -59,7 +59,9 @@
 
     <div id="userfighter"></div>
     <center>
-        <div id="fight-button"></div>
+        <div id="fight-button">
+            <button id="for-button" onclick="next()">Fight</button>
+        </div>
     </center>
     <div id="badfighter"></div>
 
@@ -70,6 +72,7 @@
 
     var userChoice = "";
     var enemyChoice = "";
+    var endgame = 0;
     var start = true;
 
     var onehp = 130;
@@ -126,19 +129,19 @@
         
         if (enemyChoice == "b1" && start == false) {
             $("#lefthead").css("display", "none");
-            aswell();
+            $("#for-button").css("display", "block");
             $("#six").css("float", "left");
             $("#badfighter").append($("#six"));
             start = true;
         } else if (enemyChoice == "b2" && start == false) {
             $("#lefthead").css("display", "none");
-            aswell();
+            $("#for-button").css("display", "block");
             $("#five").css("float", "left");
             $("#badfighter").append($("#five"));
             start = true;
         } else if (enemyChoice == "b3" && start == false) {
             $("#lefthead").css("display", "none");
-            aswell();
+            $("#for-button").css("display", "block");
             $("#four").css("float", "left");
             $("#badfighter").append($("#four"));
             start = true;
@@ -146,14 +149,6 @@
             null;
         }
     })
-
-    function aswell() {
-        var button = $("<button>");
-        button.text("fight");
-        button.attr("id", "for-button");
-        button.attr("onclick", "next()");
-        $("#fight-button").append(button);
-    }
 
     function next() {
         if (userChoice == "1") {
@@ -216,7 +211,7 @@
             } else {
                 twohp = twohp - chic;
                 fourhp = fourhp - squi;
-                squi += 5;
+                squi += 3;
                 $("#twohp").text(twohp);
                 $("#sixhp").text(fourhp);
             }
@@ -228,7 +223,7 @@
             } else {
                 twohp = twohp - croc;
                 fivehp = fivehp - squi;
-                squi += 5;
+                squi += 3;
                 $("#twohp").text(twohp);
                 $("#fivehp").text(fivehp);
             }
@@ -240,7 +235,7 @@
             } else {
                 twohp = twohp - lava;
                 sixhp = sixhp - squi;
-                squi += 5;
+                squi += 3;
                 $("#twohp").text(twohp);
                 $("#fourhp").text(sixhp);
             }
@@ -256,7 +251,7 @@
             } else {
                 threehp = threehp - chic;
                 fourhp = fourhp - bulb;
-                bulb += 5;
+                bulb += 2;
                 $("#threehp").text(threehp);
                 $("#sixhp").text(fourhp);
             }
@@ -268,7 +263,7 @@
             } else {
                 threehp = threehp - croc;
                 fivehp = fivehp - bulb;
-                bulb += 5;
+                bulb += 2;
                 $("#threehp").text(threehp);
                 $("#fivehp").text(fivehp);
             }
@@ -280,7 +275,7 @@
             } else {
                 threehp = threehp - lava;
                 sixhp = sixhp - bulb;
-                bulb += 5;
+                bulb += 2;
                 $("#threehp").text(threehp);
                 $("#fourhp").text(sixhp);
             }
@@ -288,20 +283,37 @@
     }
 
     function youlost() {
+        alert("You Lost!")
+        $(".info").css("color", "red")
+        $(".info").text("You Lost!");
         $("#result").css("display", "block");
     }
 
     function nextone() {
         if (enemyChoice == "b1") {
+            alert("Select Another Fighter");
             $("#six").remove();
+            endgame++;
             start = false;
         } else if (enemyChoice == "b2") {
+            alert("Select Another Fighter");
             $("#five").remove();
+            endgame++;
             start = false;
         } else if (enemyChoice == "b3") {
+            alert("Select Another Fighter");
             $("#four").remove();
+            endgame++;
             start = false;
         }
+
+            if (endgame == 3) {
+            alert("You Won!!");
+            $(".info").css("color", "yellow")
+            $(".info").text("You Won!!");
+            $("#result").css("display", "block");
+        }
+
     }
 
 </script>
