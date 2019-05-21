@@ -292,7 +292,16 @@
     }
 
     function nextone() {
-        alert("choose next enemy");
+        if (enemyChoice == "b1") {
+            $("#six").remove();
+            start = false;
+        } else if (enemyChoice == "b2") {
+            $("#five").remove();
+            start = false;
+        } else if (enemyChoice == "b3") {
+            $("#four").remove();
+            start = false;
+        }
     }
 
 </script>
