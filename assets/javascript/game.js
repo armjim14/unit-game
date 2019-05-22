@@ -30,18 +30,24 @@ $(".good").on("click", function () {
     userChoice = $(this).data("number");
     
     if (userChoice == "1" && start == true) {
+        $("#lefthead").css("display", "none");
+        $("#computerside").css("width", "100%");
         $("#two").css("display", "none");
         $("#three").css("display", "none");
         $("#one").css("float", "right");
         $("#userfighter").append($("#one"));
         start = false;
     } else if (userChoice == "2" && start == true) {
+        $("#lefthead").css("display", "none");
+        $("#computerside").css("width", "100%");
         $("#one").css("display", "none");
         $("#three").css("display", "none");
         $("#two").css("float", "right");
         $("#userfighter").append($("#two"));
         start = false;
     } else if (userChoice == "3" && start == true) {
+        $("#lefthead").css("display", "none");
+        $("#computerside").css("width", "100%");
         $("#one").css("display", "none");
         $("#two").css("display", "none");
         $("#three").css("float", "right");
@@ -56,20 +62,20 @@ $(".bad").on("click", function () {
     enemyChoice = $(this).data("number");
     
     if (enemyChoice == "b1" && start == false) {
-        $("#lefthead").css("display", "none");
         showButton()
+        $(".option2").css("width", "50%");
         $("#six").css("float", "left");
         $("#badfighter").append($("#six"));
         start = true;
     } else if (enemyChoice == "b2" && start == false) {
-        $("#lefthead").css("display", "none");
         showButton()
+        $(".option2").css("width", "50%");
         $("#five").css("float", "left");
         $("#badfighter").append($("#five"));
         start = true;
     } else if (enemyChoice == "b3" && start == false) {
-        $("#lefthead").css("display", "none");
         showButton()
+        $(".option2").css("width", "50%");
         $("#four").css("float", "left");
         $("#badfighter").append($("#four"));
         start = true;
@@ -229,6 +235,7 @@ function thirdCHoice() {
 
 function youlost() {
     alert("You Lost!")
+    $("#righthead").css("display", "none");
     $(".info").css("color", "red")
     $(".info").text("You Lost!");
     $("#result").css("display", "block");
@@ -250,10 +257,11 @@ function nextone() {
         $("#four").remove();
         endgame++;
         start = false;
-    }
+    } 
 
         if (endgame == 3) {
         alert("You Won!!");
+        $("#righthead").css("display", "none");
         $(".info").css("color", "yellow")
         $(".info").text("You Won!!");
         $("#result").css("display", "block");

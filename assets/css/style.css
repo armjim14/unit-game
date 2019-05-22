@@ -114,4 +114,19 @@ img {
     margin-left: 48%;
     position: absolute;
     bottom: 100px;
+    border: black 2px solid;
+    border-radius: 75%;
+    padding: 15px;
+}
+
+#result:visited {
+    color: white
+}
+
+#result:link {
+    color: white
+}
+
+#result:hover {
+    background-color: black;
 }
