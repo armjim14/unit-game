@@ -63,19 +63,31 @@ $(".bad").on("click", function () {
     
     if (enemyChoice == "b1" && start == false) {
         showButton()
-        $(".option2").css("width", "50%");
+        if (endgame == 0) {
+            $(".option2").css("width", "50%");
+        } else if (endgame == 1) {
+            $(".option2").css("width", "100%");
+        }
         $("#six").css("float", "left");
         $("#badfighter").append($("#six"));
         start = true;
     } else if (enemyChoice == "b2" && start == false) {
         showButton()
-        $(".option2").css("width", "50%");
+        if (endgame == 0) {
+            $(".option2").css("width", "50%");
+        } else if (endgame == 1) {
+            $(".option2").css("width", "100%");
+        }
         $("#five").css("float", "left");
         $("#badfighter").append($("#five"));
         start = true;
     } else if (enemyChoice == "b3" && start == false) {
         showButton()
-        $(".option2").css("width", "50%");
+        if (endgame == 0) {
+            $(".option2").css("width", "50%");
+        } else if (endgame == 1) {
+            $(".option2").css("width", "100%");
+        }
         $("#four").css("float", "left");
         $("#badfighter").append($("#four"));
         start = true;
@@ -235,7 +247,10 @@ function thirdCHoice() {
 
 function youlost() {
     alert("You Lost!")
+    $(".option2").css("display", "none");
     $("#righthead").css("display", "none");
+    $("#fight-button").remove();
+    $("#userfighter").css("width", "70%");
     $(".info").css("color", "red")
     $(".info").text("You Lost!");
     $("#result").css("display", "block");
@@ -261,6 +276,8 @@ function nextone() {
 
         if (endgame == 3) {
         alert("You Won!!");
+        $("#userfighter").css("width", "70%");
+        $("#fight-button").remove();
         $("#righthead").css("display", "none");
         $(".info").css("color", "yellow")
         $(".info").text("You Won!!");
