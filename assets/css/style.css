@@ -75,17 +75,19 @@ img {
     width: 33%;
 }
 
+hr {
+   border: black .5px solid;
+}
+
 /* section ends here */
 
 #userfighter {
     float: left;
-    overflow: auto;
     width: 33%;
 }
 
 #fight-button {
     float: left;
-    overflow: auto;
     width: 33%;
     padding-top: 25px;
 }
@@ -104,7 +106,6 @@ img {
 
 #badfighter {
     float: left;
-    overflow: auto;
     width: 33%;
 }
 
@@ -130,3 +131,14 @@ img {
 #result:hover {
     background-color: black;
 }
+
+/* media stuff */
+
+@media screen and (max-width: 1300px) {
+    #playerside { width: 100%; border-right: none; margin-bottom: 30px; }
+    #computerside { width: 100% }
+}
+
+/* @media screen and (max-height: 665px) {
+    #result { bottom:none; margin-top: 500px; }
+} */

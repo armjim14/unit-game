@@ -258,30 +258,35 @@ function youlost() {
 
 function nextone() {
     if (enemyChoice == "b1") {
-        alert("Select Another Fighter");
         $("#six").remove();
         endgame++;
         start = false;
     } else if (enemyChoice == "b2") {
-        alert("Select Another Fighter");
         $("#five").remove();
         endgame++;
         start = false;
     } else if (enemyChoice == "b3") {
-        alert("Select Another Fighter");
         $("#four").remove();
         endgame++;
         start = false;
     } 
 
-        if (endgame == 3) {
-        alert("You Won!!");
-        $("#userfighter").css("width", "70%");
-        $("#fight-button").remove();
-        $("#righthead").css("display", "none");
-        $(".info").css("color", "yellow")
-        $(".info").text("You Won!!");
-        $("#result").css("display", "block");
-    }
+        if (endgame == 1) {
+            alert("Select Another Fighter");
+        } else if (endgame == 2){
+            alert("Select Another Fighter");
+        } else if (endgame == 3) {
+            youWon();
+        }
 
+}
+
+function youWon() {
+    alert("You Won!!");
+    $("#userfighter").css("width", "70%");
+    $("#fight-button").remove();
+    $("#righthead").css("display", "none");
+    $(".info").css("color", "yellow")
+    $(".info").text("You Won!!");
+    $("#result").css("display", "block");
 }
