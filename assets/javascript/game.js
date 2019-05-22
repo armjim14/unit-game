@@ -58,41 +58,43 @@ $(".good").on("click", function () {
     }
 })
 
-$(".bad").on("click", function () {
-    enemyChoice = $(this).data("number");
-    
-    if (enemyChoice == "b1" && start == false) {
-        showButton()
-        if (endgame == 0) {
-            $(".option2").css("width", "50%");
-        } else if (endgame == 1) {
-            $(".option2").css("width", "100%");
+    $(".bad").on("click", function () {
+        if (start == false) {
+            enemyChoice = $(this).data("number");
+        
+        if (enemyChoice == "b1") {
+            showButton()
+            if (endgame == 0) {
+                $(".option2").css("width", "50%");
+            } else if (endgame == 1) {
+                $(".option2").css("width", "100%");
+            }
+            $("#six").css("float", "left");
+            $("#badfighter").append($("#six"));
+            start = true;
+        } else if (enemyChoice == "b2") {
+            showButton()
+            if (endgame == 0) {
+                $(".option2").css("width", "50%");
+            } else if (endgame == 1) {
+                $(".option2").css("width", "100%");
+            }
+            $("#five").css("float", "left");
+            $("#badfighter").append($("#five"));
+            start = true;
+        } else if (enemyChoice == "b3") {
+            showButton()
+            if (endgame == 0) {
+                $(".option2").css("width", "50%");
+            } else if (endgame == 1) {
+                $(".option2").css("width", "100%");
+            }
+            $("#four").css("float", "left");
+            $("#badfighter").append($("#four"));
+            start = true;
+        } else {
+            null;
         }
-        $("#six").css("float", "left");
-        $("#badfighter").append($("#six"));
-        start = true;
-    } else if (enemyChoice == "b2" && start == false) {
-        showButton()
-        if (endgame == 0) {
-            $(".option2").css("width", "50%");
-        } else if (endgame == 1) {
-            $(".option2").css("width", "100%");
-        }
-        $("#five").css("float", "left");
-        $("#badfighter").append($("#five"));
-        start = true;
-    } else if (enemyChoice == "b3" && start == false) {
-        showButton()
-        if (endgame == 0) {
-            $(".option2").css("width", "50%");
-        } else if (endgame == 1) {
-            $(".option2").css("width", "100%");
-        }
-        $("#four").css("float", "left");
-        $("#badfighter").append($("#four"));
-        start = true;
-    } else {
-        null;
     }
 })
 

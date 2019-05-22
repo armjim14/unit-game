@@ -139,6 +139,6 @@ hr {
     #computerside { width: 100% }
 }
 
-/* @media screen and (max-height: 665px) {
-    #result { bottom:none; margin-top: 500px; }
-} */
+@media screen and (max-height: 665px) {
+    #result { bottom: auto; margin-top: 470px; }
+}
