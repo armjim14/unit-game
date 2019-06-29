@@ -30,6 +30,7 @@ $(".good").on("click", function () {
     userChoice = $(this).data("number");
     
     if (userChoice == "1" && start == true) {
+        $(".option").css("width", "50%");
         $("#lefthead").css("display", "none");
         $("#computerside").css("width", "100%");
         $("#two").css("display", "none");
@@ -38,6 +39,7 @@ $(".good").on("click", function () {
         $("#userfighter").append($("#one"));
         start = false;
     } else if (userChoice == "2" && start == true) {
+        $(".option").css("width", "50%");
         $("#lefthead").css("display", "none");
         $("#computerside").css("width", "100%");
         $("#one").css("display", "none");
@@ -46,6 +48,7 @@ $(".good").on("click", function () {
         $("#userfighter").append($("#two"));
         start = false;
     } else if (userChoice == "3" && start == true) {
+        $(".option").css("width", "50%");
         $("#lefthead").css("display", "none");
         $("#computerside").css("width", "100%");
         $("#one").css("display", "none");
