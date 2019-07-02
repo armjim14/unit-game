@@ -70,7 +70,7 @@ $(".good").on("click", function () {
             if (endgame == 0) {
                 $(".option2").css("width", "50%");
             } else if (endgame == 1) {
-                $(".option2").css("width", "100%");
+                $(".option2").css("margin-right", "25%");
             }
             $("#six").css("float", "left");
             $("#badfighter").append($("#six"));
@@ -80,7 +80,7 @@ $(".good").on("click", function () {
             if (endgame == 0) {
                 $(".option2").css("width", "50%");
             } else if (endgame == 1) {
-                $(".option2").css("width", "100%");
+                $(".option2").css("margin-right", "25%");
             }
             $("#five").css("float", "left");
             $("#badfighter").append($("#five"));
@@ -90,7 +90,7 @@ $(".good").on("click", function () {
             if (endgame == 0) {
                 $(".option2").css("width", "50%");
             } else if (endgame == 1) {
-                $(".option2").css("width", "100%");
+                $(".option2").css("margin-right", "25%");
             }
             $("#four").css("float", "left");
             $("#badfighter").append($("#four"));
@@ -288,7 +288,7 @@ function nextone() {
 
 function youWon() {
     alert("You Won!!");
-    $("#userfighter").css("width", "70%");
+    // $("#userfighter").css("width", "70%");
     $("#fight-button").remove();
     $("#righthead").css("display", "none");
     $(".info").css("color", "yellow")
